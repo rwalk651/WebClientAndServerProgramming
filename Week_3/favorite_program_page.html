@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Favorite Program Page</title>
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+          crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="jumbotron">
+    <h1>My favorite program</h1>
+    <br>
+    <h2>Minnesota Park Travel Guide</h2>
+</div>
+
+<div class="row">
+
+    <div class="col-md-6">
+        <div class="ml-5 mr-5">
+            <p>My favorite program is my final project for Programming Logic and Design</p> <!-- italics name of class -->
+            <p>The program pulls data from a Minnesota state park API</p>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <form class="ml-5 mr-5">
+
+            <label for="student-name">Name</label>
+            <input id="student-name" class="form-control" name="student-name" type="text"><br>
+            <label for="user-email">Email</label>
+            <input id="user-email" class="form-control" name="user-email" type="email"><br>
+            <label for="comment-section">Comments</label><br>
+            <textarea id="comment-section" class="form-control"
+                      name="comment-section" required></textarea>
+            <br>
+
+            <label class="form-text">Are you a current student?</label>
+            <div class="form-check">
+                <label for="yes-status" class="form-check-label"></label>
+                <input id="yes-status" name="student-status" type="radio" checked> Yes
+            </div>
+            <div class="form-check">
+                <label for="no-status" class="form-check-label"></label>
+                <input id="no-status" name="student-status" type="radio"> No
+            </div>
+
+            <div>
+                <input type="submit" class="btn btn-success mt-2">
+            </div>
+
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
