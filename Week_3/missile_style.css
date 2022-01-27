@@ -1,0 +1,12 @@
+#test-only {
+    color: green;
+}
+
+#real-alert {
+    color: darkred;
+    font-weight: bold;
+}
+
+.missile-link {
+    display: block;
+}
