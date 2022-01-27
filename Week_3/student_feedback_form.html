@@ -10,13 +10,14 @@
 
 <form>
 
-    <br> Name <input type="text">
-    <br> email <input type="email">
+    <label for="student-name">Name</label> <input id="student-name" name="student-name" type="text">
+    <br><label for="user-email">email</label> <input id="user-email" name="user-email" type="email">
     <br><label for="comment-section">Comments</label>
-    <br> <textarea id="comment-section" required></textarea>
+    <br><textarea id="comment-section" name="comment-section" required></textarea>
     <br>
-    <br> Are you a current student?
-    <br>
+    <br><label for="yes-status" for="no-status">Are you a current student?</label>
+    <br><input id="yes-status" name="status" type="radio" checked>Yes
+        <input id="no-status" name="status" type="radio">No
     <br><input type="submit">
 
 </form>
