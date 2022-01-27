@@ -3,24 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <title>Student Feedback Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+          crossorigin="anonymous">
+
 </head>
-<body>
+<body class="m-3">
 
-<h1>Student Feedback Form</h1>
-
-<form>
-
-    <label for="student-name">Name</label> <input id="student-name" name="student-name" type="text">
-    <br><label for="user-email">email</label> <input id="user-email" name="user-email" type="email">
-    <br><label for="comment-section">Comments</label>
-    <br><textarea id="comment-section" name="comment-section" required></textarea>
+<div class="jumbotron">
+    <h1>Student Feedback Form</h1>
     <br>
-    <br><label for="yes-status" for="no-status">Are you a current student?</label>
-    <br><input id="yes-status" name="status" type="radio" checked>Yes
-        <input id="no-status" name="status" type="radio">No
-    <br><input type="submit">
+    <h2>Please provide feedback. You may do so anonymously.</h2>
+</div>
 
+<form class="ml-5 mr-5">
+    <div>
+        <label for="student-name">Name</label>
+            <input id="student-name" class="form-control" name="student-name" type="text"><br>
+        <label for="user-email">Email</label>
+            <input id="user-email" class="form-control" name="user-email" type="email"><br>
+        <label for="comment-section">Comments</label><br>
+        <textarea id="comment-section" class="form-control" name="comment-section" required></textarea>
+        <br>
+
+        <label class="form-text">Are you a current student?</label>
+        <div class="form-check">
+            <label for="yes-status" class="form-check-label"></label>
+            <input id="yes-status" name="student-status" type="radio" checked> Yes
+        </div>
+
+        <div class="form-check">
+            <label for="no-status" class="form-check-label"></label>
+            <input id="no-status" name="student-status" type="radio"> No
+        </div>
+
+        <input type="submit" class="btn btn-outline-success mt-2">
+    </div>
 </form>
+
 
 </body>
 </html>
