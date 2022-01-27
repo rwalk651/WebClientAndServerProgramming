@@ -11,7 +11,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Patua+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Patua+One&display=swap"
+          rel="stylesheet">
 
     <link rel="stylesheet"
           href="feedback_styles.css"
@@ -26,30 +27,44 @@
     <h2>Please provide feedback. You may do so anonymously.</h2>
 </div>
 
-<form class="ml-5 mr-5">
-    <div>
-        <label for="student-name">Name</label>
-            <input id="student-name" class="form-control" name="student-name" type="text"><br>
-        <label for="user-email">Email</label>
-            <input id="user-email" class="form-control" name="user-email" type="email"><br>
-        <label for="comment-section">Comments</label><br>
-        <textarea id="comment-section" class="form-control" name="comment-section" required></textarea>
-        <br>
+<div class="row">
 
-        <label class="form-text">Are you a current student?</label>
-        <div class="form-check">
-            <label for="yes-status" class="form-check-label"></label>
-            <input id="yes-status" name="student-status" type="radio" checked> Yes
+    <div class="col-md-5">
+        <div class="ml-5">
+            <p></p>
+            <p></p>
+            <p></p>
         </div>
-
-        <div class="form-check">
-            <label for="no-status" class="form-check-label"></label>
-            <input id="no-status" name="student-status" type="radio"> No
-        </div>
-
-        <input type="submit" class="btn btn-success mt-2">
     </div>
-</form>
+
+    <div class="col-md-5">
+        <form class="ml-5 mr-5">
+            <label for="student-name">Name</label>
+                <input id="student-name" class="form-control" name="student-name" type="text"><br>
+            <label for="user-email">Email</label>
+                <input id="user-email" class="form-control" name="user-email" type="email"><br>
+            <label for="comment-section">Comments</label><br>
+            <textarea id="comment-section" class="form-control"
+                      name="comment-section" required></textarea>
+            <br>
+
+            <label class="form-text">Are you a current student?</label>
+                <div class="form-check">
+                    <label for="yes-status" class="form-check-label"></label>
+                    <input id="yes-status" name="student-status" type="radio" checked> Yes
+                </div>
+                <div class="form-check">
+                    <label for="no-status" class="form-check-label"></label>
+                    <input id="no-status" name="student-status" type="radio"> No
+                </div>
+
+            <div>
+                <input type="submit" class="btn btn-success mt-2">
+            </div>
+
+        </form>
+    </div>
+</div>
 
 </body>
 </html>
