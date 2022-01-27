@@ -1,23 +1,50 @@
+body {
+    background-color: cornflowerblue;
+}
+
 #page-title {
     text-shadow: 4px 4px cyan;
 }
 
 .favorite-section {
+    border: 4px black double;
+    margin: 5px;
+    padding: 10px;
+}
 
+.section-header {
+    background-color: purple;
 }
 
 #favorite-movie-title {
-
+    font-style: italic;
+    color: darkcyan;
 }
 
 #favorite-music-name {
-
+    font-weight: bold;
+    color: lawngreen;
 }
 
 #most-favorite-food {
-
+    color: magenta;
 }
 
 .favorite-image {
+    border-radius: 8px;
+    max-width: 50%;
+    height: auto;
+}
 
+table, tr, th, td {
+    border: 1px black solid;
+
+}
+
+th {
+    color: goldenrod;
+}
+
+td {
+    color: darkred;
 }
