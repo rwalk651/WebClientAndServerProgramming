@@ -8,52 +8,40 @@
           integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
           crossorigin="anonymous">
 
+    <link rel="stylesheet" type="text/css" href="favorite_program_style.css">
+
 </head>
 <body>
 
 <div class="jumbotron">
-    <h1>My favorite program</h1>
+    <h1>My Favorite Program</h1>
     <br>
     <h2>Minnesota Park Travel Guide</h2>
 </div>
 
-<div class="row">
+<div>
+    My favorite program is my final project for <i>Programming Logic and Design</i>.
+    <br><br>
+    The program pulls data on Minnesota State Parks from an API server. It then organizes the data into
+    a travel guide for 5 random parks. It's my favorite because it is a culmination of everything I
+    learned during PLaD, and the most sophisticated program I've written.
+    <br><br>
 
-    <div class="col-md-6">
-        <div class="ml-5 mr-5">
-            <p>My favorite program is my final project for Programming Logic and Design</p> <!-- italics name of class -->
-            <p>The program pulls data from a Minnesota state park API</p>
-        </div>
-    </div>
+    A sample:
+    <pre><code>
+        def download_images(park_images, park_name):
+            """Take URLs from park dictionary and request, download, save and index images
+            from MN park API server."""
+            for index, url in enumerate(park_images):
+                chosen_img = requests.get(url)
+                filename = f'{park_name}_{index}.jpg'
+                with open(filename, 'wb') as file:
+                    for chunk in chosen_img.iter_content():
+                        file.write(chunk)
+    </code></pre>
 
-    <div class="col-md-6">
-        <form class="ml-5 mr-5">
-
-            <label for="student-name">Name</label>
-            <input id="student-name" class="form-control" name="student-name" type="text"><br>
-            <label for="user-email">Email</label>
-            <input id="user-email" class="form-control" name="user-email" type="email"><br>
-            <label for="comment-section">Comments</label><br>
-            <textarea id="comment-section" class="form-control"
-                      name="comment-section" required></textarea>
-            <br>
-
-            <label class="form-text">Are you a current student?</label>
-            <div class="form-check">
-                <label for="yes-status" class="form-check-label"></label>
-                <input id="yes-status" name="student-status" type="radio" checked> Yes
-            </div>
-            <div class="form-check">
-                <label for="no-status" class="form-check-label"></label>
-                <input id="no-status" name="student-status" type="radio"> No
-            </div>
-
-            <div>
-                <input type="submit" class="btn btn-success mt-2">
-            </div>
-
-        </form>
-    </div>
+    Here's a <a href="https://github.com/rwalk651/Program-Logic-and-Design-Final/blob/0190244494f358bbc75c79cd3969819e6e69b7a9/MN_Park_Guide_With_Street_Map_V2_Email_Edits.py">
+    link to the full code on GitHub.</a>
 </div>
 
 </body>
