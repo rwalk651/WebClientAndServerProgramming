@@ -1,0 +1,9 @@
+.jumbotron {
+    background: linear-gradient(to top left, #33ccff 16%, #ff33cc 100%);
+}
+
+body {
+    background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+    font-family: 'Supermercado One', cursive;
+}
+
