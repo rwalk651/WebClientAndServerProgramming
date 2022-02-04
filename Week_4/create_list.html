@@ -6,14 +6,7 @@
 </head>
 <body>
 
-<!--Part 1a: When the user types text into the input form and clicks the button,
-the text should be added to the list, as a new list element.
-When the text has been added to the unordered list, clear the text from the input.
-
-Part 1b: Add a clear button. When clicked, all the li elements should be removed from
-the page so the ul list is empty.
-
-Part 1c: Prevent the user adding more than 10 items to the list.
+<!-- Part 1c: Prevent the user adding more than 10 items to the list.
 If the clear button is clicked, the user may keep adding items.
 
 Part 1d:  Add validation using JavaScript. The form should only accept text of length
@@ -26,39 +19,51 @@ Do not clear the text in the input. -->
   <label for="list-item">Please enter list item</label>
   <input type="text" id="list-item">
   <button id="save-item">Submit</button>
+  <button id="clear">Clear</button>
 
   <!-- empty unordered list -->
-  <ul id="list">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
+  <ul id="list"></ul>
 
 <script>
 
   // defined variables
   let submitButton = document.querySelector('#save-item')
+  let clearButton = document.querySelector('#clear')
   let itemInput = document.querySelector('#list-item')
-  let listElement = document.querySelector('#list')
-  let statusMessage = document.querySelector('#status-message')
+  let listText = document.querySelector('#list')
+  let itemInList = 0
+  let maxItems = 10
 
   submitButton.addEventListener('click', function() {
+    // validate list length
+    if (itemInList >= maxItems) {
+      alert('No more items can be added. Please upgrade to Personal List PRO.')
+      return
+    }
+    // read user input
     let textItem = itemInput.value
     console.log(textItem)
-    if (textItem.length < 1) {
-      statusMessage.innerHTML = 'Please enter at least one letter.'
+    // create li element
+    let newListItem = document.createElement('li')
+    // validate text and add to list element
+    if (textItem.length === 0) {
+      alert('Please enter at least one letter.')
+      return
     } else if (textItem.length > 50) {
-      statusMessage.innerHTML = 'Text length cannot exceed 50 letters.'
+      alert('Text length cannot exceed 50 letters.')
+      return
     } else {
-      listElement.innerHTML =
+      newListItem.innerHTML = textItem
     }
+    // add li element to ul element
+    listText.appendChild(newListItem)
+    // clear text after submission
+    itemInput.value = ''
+    itemInList++
+  })
+
+  clearButton.addEventListener('click', function() {
+    listText.innerHTML = ''
   })
 
 </script>
