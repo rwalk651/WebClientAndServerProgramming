@@ -6,8 +6,7 @@
 </head>
 <body>
 
-<!--Part 1a: Create a web page with an empty unordered list, an input text box, and button.
-When the user types text into the input form and clicks the button,
+<!--Part 1a: When the user types text into the input form and clicks the button,
 the text should be added to the list, as a new list element.
 When the text has been added to the unordered list, clear the text from the input.
 
@@ -23,11 +22,12 @@ between 1 and 50 characters.
 Ignore the user input if there is no text entered
 Display an alert error message if the text too long - more than 50 characters.
 Do not clear the text in the input. -->
-
-  <p>Please enter list item</p>
+  <!-- user input field -->
+  <label for="list-item">Please enter list item</label>
   <input type="text" id="list-item">
-  <button id="add-item">Submit</button>
+  <button id="save-item">Submit</button>
 
+  <!-- empty unordered list -->
   <ul id="list">
     <li></li>
     <li></li>
@@ -42,6 +42,24 @@ Do not clear the text in the input. -->
   </ul>
 
 <script>
+
+  // defined variables
+  let submitButton = document.querySelector('#save-item')
+  let itemInput = document.querySelector('#list-item')
+  let listElement = document.querySelector('#list')
+  let statusMessage = document.querySelector('#status-message')
+
+  submitButton.addEventListener('click', function() {
+    let textItem = itemInput.value
+    console.log(textItem)
+    if (textItem.length < 1) {
+      statusMessage.innerHTML = 'Please enter at least one letter.'
+    } else if (textItem.length > 50) {
+      statusMessage.innerHTML = 'Text length cannot exceed 50 letters.'
+    } else {
+      listElement.innerHTML =
+    }
+  })
 
 </script>
 
