@@ -5,16 +5,6 @@
   <title>Personal List</title>
 </head>
 <body>
-
-<!-- Part 1c: Prevent the user adding more than 10 items to the list.
-If the clear button is clicked, the user may keep adding items.
-
-Part 1d:  Add validation using JavaScript. The form should only accept text of length
-between 1 and 50 characters.
-
-Ignore the user input if there is no text entered
-Display an alert error message if the text too long - more than 50 characters.
-Do not clear the text in the input. -->
   <!-- user input field -->
   <label for="list-item">Please enter list item</label>
   <input type="text" id="list-item">
@@ -35,35 +25,34 @@ Do not clear the text in the input. -->
   let maxItems = 10
 
   submitButton.addEventListener('click', function() {
-    // validate list length
-    if (itemInList >= maxItems) {
+
+    if (itemInList >= maxItems) {   // validate list length
       alert('No more items can be added. Please upgrade to Personal List PRO.')
       return
     }
-    // read user input
-    let textItem = itemInput.value
+
+    let textItem = itemInput.value  // read user input
     console.log(textItem)
-    // create li element
-    let newListItem = document.createElement('li')
-    // validate text and add to list element
-    if (textItem.length === 0) {
-      alert('Please enter at least one letter.')
+
+    let newListItem = document.createElement('li')  // create li element
+
+    if (textItem.length === 0) {  // validate text and add to list element
       return
     } else if (textItem.length > 50) {
-      alert('Text length cannot exceed 50 letters.')
+      alert('Text length cannot exceed 50 characters.')
       return
     } else {
       newListItem.innerHTML = textItem
     }
-    // add li element to ul element
-    listText.appendChild(newListItem)
-    // clear text after submission
-    itemInput.value = ''
+
+    listText.appendChild(newListItem)   // add li element to ul element
+    itemInput.value = ''  // clear text after submission
     itemInList++
   })
 
   clearButton.addEventListener('click', function() {
     listText.innerHTML = ''
+    itemInList = 0
   })
 
 </script>
