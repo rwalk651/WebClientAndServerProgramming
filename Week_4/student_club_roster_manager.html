@@ -52,49 +52,72 @@
 <button id="remove-selected-students">Remove selected students</button>
 
 <script>
+
     // Using JavaScript, display 0 in the span#student-count  (1pt)
         let studentCount = document.querySelector('#student-count')
-        studentCount.innerHTML = `0`
+        let listCount = 0
+        studentCount.innerHTML = `${listCount}`
 
     // Add an event listener so that when button#add-students is clicked:
         let addButton = document.querySelector('#add-student')
         let nameInput = document.querySelector('#student-name')
         let idInput = document.querySelector('#student-id')
         let gpaInput = document.querySelector('#student-gpa')
+        let studentList = document.querySelector('#student-list')
+
         addButton.addEventListener('click', function() {
     // - Read the value from the student-name input, save in a variable.
-            let newStudent = nameInput.value
-            console.log(newStudent)
-    /* - Read the value from the student-id input, save in a variable. If the id is not entered, show an alert error message and return. (1pt)
-       - Read the value from the student-gpa input, save in a variable. If the GPA is not entered, or is not in the range 0-4, show an alert error message and return.  (1pt)
-    */
+            let studentName = nameInput.value
+            console.log(studentName)
+
+    /* - Read the value from the student-id input. If the id is not entered, show an alert error message and return. (1pt)
+       - Read the value from the student-gpa input. If the GPA is not entered, or is not in the range 0-4, show an alert error message and return.  (1pt)
+       - If the name is not entered, show an alert error message and return. (1pt)
+       - Set the innerHTML of the li element to a string containing the student's name, id, and GPA  (1pt) */
             let newId = idInput.value
             let newGpa = gpaInput.value
-            if (newId.length === 0) {
+            let newStudent = document.createElement('li')
+
+            if (studentName.length === 0) {
+                alert('Error, please enter student name')
+                return
+            } else if (newId.length === 0) {
                 alert('Error, please enter student ID')
-            } else if (newGpa)
-        })
-        /*
-        If the name is not entered, show an alert error message and return. (1pt) */
+                return
+            } else if (newGpa.length === 0) {
+                alert('Error, please enter GPA')
+                return
+            } else if (newGpa < 0) {
+                alert('Error, please enter GPA in range 0-4')
+                return
+            } else if (newGpa > 4) {
+                alert('Error, please enter GPA in range 0-4')
+                return
+            } else {
+                newStudent.innerHTML = `${studentName}, ID: ${newId}, GPA ${newGpa}`
+            }
 
-       /*         - Create a new li element (1pt)
-        - Set the innerHTML of the li element to a string containing the student's name, id, and GPA  (1pt)
-            for example "Beyonce Knowles, id: aa1234bb, GPA 3.8"
-            Use a template string to generate this string
-        - Add a click event handler to the new li element.  (3pt)
-        - When the li element is clicked, add the class="selected" to that li element.
-        - When that li element is clicked again, remove the class="selected" from that li element
-            In other words, clicking a li element will toggle the selected class. https://www.w3schools.com/howto/howto_js_toggle_class.asp
-        - Add the new li element to ul#student-list element (1pt)
-        - Clear the values of the three input elements (1pt)
-        - Update the span#student-count value to the new number of students (1pt)
+     // - Create a new li element (1pt)
+            studentList.appendChild(newStudent)
+            listCount = listCount + 1
 
-    * Add an event listener so that when button#remove-selected-students is clicked:
-        - Remove all of the elements with the class="selected" from the list.   (3pt)
-        - Using the remove() function on an element will remove it. Example https://jsfiddle.net/rk9pm4vg/
+})
+/* - Create a new li elemen, id: aa1234bb, GPA 3.8"
+    Use a template string to generate this string
+- Add a click event handler to the new li element.  (3pt)
+- When the li element is clicked, add the class="selected" to that li element.
+- When that li element is clicked again, remove the class="selected" from that li element
+    In other words, clicking a li element will toggle the selected class. https://www.w3schools.com/howto/howto_js_toggle_class.asp
+- Add the new li element to ul#student-list element (1pt)
+- Clear the values of the three input elements (1pt)
+- Update the span#student-count value to the new number of students (1pt)
 
-    You should not need to modify any of the HTML.
-    */
+* Add an event listener so that when button#remove-selected-students is clicked:
+- Remove all of the elements with the class="selected" from the list.   (3pt)
+- Using the remove() function on an element will remove it. Example https://jsfiddle.net/rk9pm4vg/
+
+You should not need to modify any of the HTML.
+*/
 
 </script>
 
