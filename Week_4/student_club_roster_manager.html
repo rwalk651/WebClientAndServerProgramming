@@ -51,14 +51,13 @@
 
 <button id="remove-selected-students">Remove selected students</button>
 
+
 <script>
 
-    // Using JavaScript, display 0 in the span#student-count  (1pt)
         let studentCount = document.querySelector('#student-count')
         let listCount = 0
         studentCount.innerHTML = `${listCount}`
 
-    // Add an event listener so that when button#add-students is clicked:
         let addButton = document.querySelector('#add-student')
         let nameInput = document.querySelector('#student-name')
         let idInput = document.querySelector('#student-id')
@@ -66,14 +65,7 @@
         let studentList = document.querySelector('#student-list')
 
         addButton.addEventListener('click', function() {
-    // - Read the value from the student-name input, save in a variable.
             let studentName = nameInput.value
-            console.log(studentName)
-
-    /* - Read the value from the student-id input. If the id is not entered, show an alert error message and return. (1pt)
-       - Read the value from the student-gpa input. If the GPA is not entered, or is not in the range 0-4, show an alert error message and return.  (1pt)
-       - If the name is not entered, show an alert error message and return. (1pt)
-       - Set the innerHTML of the li element to a string containing the student's name, id, and GPA  (1pt) */
             let newId = idInput.value
             let newGpa = gpaInput.value
             let newStudent = document.createElement('li')
@@ -97,15 +89,18 @@
                 newStudent.innerHTML = `${studentName}, ID: ${newId}, GPA ${newGpa}`
             }
 
-     // - Create a new li element (1pt)
+    // - Add a click event handler to the new li element.
             studentList.appendChild(newStudent)
             listCount = listCount + 1
+            studentCount.innerHTML = `${listCount}`
+            newStudent.addEventListener('click', function() {
+                let element = document.getElementById('student-list')
+                element.classlist.toggle('selected')
+            })
 
-})
-/* - Create a new li elemen, id: aa1234bb, GPA 3.8"
-    Use a template string to generate this string
-- Add a click event handler to the new li element.  (3pt)
-- When the li element is clicked, add the class="selected" to that li element.
+        })
+
+/* - When the li element is clicked, add the class="selected" to that li element.
 - When that li element is clicked again, remove the class="selected" from that li element
     In other words, clicking a li element will toggle the selected class. https://www.w3schools.com/howto/howto_js_toggle_class.asp
 - Add the new li element to ul#student-list element (1pt)
