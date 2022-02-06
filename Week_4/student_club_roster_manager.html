@@ -51,7 +51,6 @@
 
 <button id="remove-selected-students">Remove selected students</button>
 
-
 <script>
 
         let studentCount = document.querySelector('#student-count')
@@ -63,12 +62,13 @@
         let idInput = document.querySelector('#student-id')
         let gpaInput = document.querySelector('#student-gpa')
         let studentList = document.querySelector('#student-list')
+        let newStudent = document.createElement('li')
+        let studentInList = 0
 
         addButton.addEventListener('click', function() {
             let studentName = nameInput.value
             let newId = idInput.value
             let newGpa = gpaInput.value
-            let newStudent = document.createElement('li')
 
             if (studentName.length === 0) {
                 alert('Error, please enter student name')
@@ -93,12 +93,26 @@
             studentList.appendChild(newStudent)
             listCount = listCount + 1
             studentCount.innerHTML = `${listCount}`
-            newStudent.addEventListener('click', function() {
+
+            nameInput = ''
+            idInput = ''
+            gpaInput = ''
+            studentInList++
+        })
+
+        newStudent.addEventListener('click', function() {
+            let selected = document.getElementById('student-list');
+            selected.classList.toggle('selected');
+        })
+
+
+
+            /*newStudent.addEventListener('click', function() {
                 let element = document.getElementById('student-list')
                 element.classlist.toggle('selected')
-            })
+            })*/
 
-        })
+
 
 /* - When the li element is clicked, add the class="selected" to that li element.
 - When that li element is clicked again, remove the class="selected" from that li element
