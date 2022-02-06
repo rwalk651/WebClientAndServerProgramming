@@ -53,66 +53,63 @@
 
 <script>
 
-        let studentCount = document.querySelector('#student-count')
-        let listCount = 0
-        studentCount.innerHTML = `${listCount}`
+    let studentCount = document.querySelector('#student-count')
+    let listCount = 0
+    studentCount.innerHTML = `${listCount}`
 
-        let addButton = document.querySelector('#add-student')
-        let nameInput = document.querySelector('#student-name')
-        let idInput = document.querySelector('#student-id')
-        let gpaInput = document.querySelector('#student-gpa')
-        let studentList = document.querySelector('#student-list')
+    let addButton = document.querySelector('#add-student')
+    let nameInput = document.querySelector('#student-name')
+    let idInput = document.querySelector('#student-id')
+    let gpaInput = document.querySelector('#student-gpa')
+    let studentList = document.querySelector('#student-list')
+    let selected = document.querySelector('.selected')
+    let studentInList = 0
+
+    addButton.addEventListener('click', function() {
+        let studentName = nameInput.value
+        let newId = idInput.value
+        let newGpa = gpaInput.value
         let newStudent = document.createElement('li')
-        let studentInList = 0
 
-        addButton.addEventListener('click', function() {
-            let studentName = nameInput.value
-            let newId = idInput.value
-            let newGpa = gpaInput.value
+        if (studentName.length === 0) {
+            alert('Error, please enter student name')
+            return
+        } else if (newId.length === 0) {
+            alert('Error, please enter student ID')
+            return
+        } else if (newGpa.length === 0) {
+            alert('Error, please enter GPA')
+            return
+        } else if (newGpa < 0) {
+            alert('Error, please enter GPA in range 0-4')
+            return
+        } else if (newGpa > 4) {
+            alert('Error, please enter GPA in range 0-4')
+            return
+        } else {
+            newStudent.innerHTML = `${studentName}, ID: ${newId}, GPA ${newGpa}`
+            studentList.addEventListener('click', selectFunc)
 
-            if (studentName.length === 0) {
-                alert('Error, please enter student name')
-                return
-            } else if (newId.length === 0) {
-                alert('Error, please enter student ID')
-                return
-            } else if (newGpa.length === 0) {
-                alert('Error, please enter GPA')
-                return
-            } else if (newGpa < 0) {
-                alert('Error, please enter GPA in range 0-4')
-                return
-            } else if (newGpa > 4) {
-                alert('Error, please enter GPA in range 0-4')
-                return
-            } else {
-                newStudent.innerHTML = `${studentName}, ID: ${newId}, GPA ${newGpa}`
+            function selectFunc() {
+                let select = document.getElementById('student-list');
+                select.classList.toggle('selected')
             }
+            /*newStudent.addEventListener('click', function selectFunc())
+            let listId = document.getElementById('student-list')
 
-    // - Add a click event handler to the new li element.
+            /*let selected = document.getElementById('student-list')
+            newStudent.addEventListener('click', function() {
+                selected.classList.toggle('selected')
+            })*/
             studentList.appendChild(newStudent)
             listCount = listCount + 1
             studentCount.innerHTML = `${listCount}`
-
-            nameInput = ''
-            idInput = ''
-            gpaInput = ''
+            nameInput.value = ''
+            idInput.value = ''
+            gpaInput.value = ''
             studentInList++
-        })
-
-        newStudent.addEventListener('click', function() {
-            let selected = document.getElementById('student-list');
-            selected.classList.toggle('selected');
-        })
-
-
-
-            /*newStudent.addEventListener('click', function() {
-                let element = document.getElementById('student-list')
-                element.classlist.toggle('selected')
-            })*/
-
-
+        }
+    })
 
 /* - When the li element is clicked, add the class="selected" to that li element.
 - When that li element is clicked again, remove the class="selected" from that li element
