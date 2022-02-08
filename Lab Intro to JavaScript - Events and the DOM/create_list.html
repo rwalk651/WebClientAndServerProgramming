@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Personal List</title>
+</head>
+<body>
+  <!-- user input field -->
+  <label for="list-item">Please enter list item</label>
+  <input type="text" id="list-item">
+  <button id="save-item">Submit</button>
+  <button id="clear">Clear</button>
+
+  <!-- empty unordered list -->
+  <ul id="list"></ul>
+
+<script>
+
+  // defined variables
+  let submitButton = document.querySelector('#save-item')
+  let clearButton = document.querySelector('#clear')
+  let itemInput = document.querySelector('#list-item')
+  let listText = document.querySelector('#list')
+  let itemInList = 0
+  let maxItems = 10
+
+  submitButton.addEventListener('click', function() {
+
+    if (itemInList >= maxItems) {   // validate list length
+      alert('No more items can be added. Please upgrade to Personal List PRO.')
+      return
+    }
+
+    let textItem = itemInput.value  // read user input
+    console.log(textItem)
+
+    let newListItem = document.createElement('li')  // create li element
+
+    if (textItem.length === 0) {  // validate text and add to list element
+      return
+    } else if (textItem.length > 50) {
+      alert('Text length cannot exceed 50 characters.')
+      return
+    } else {
+      newListItem.innerHTML = textItem
+    }
+
+    listText.appendChild(newListItem)   // add li element to ul element
+
+    // clear text from input field after submission and move to next row
+    itemInput.value = ''
+    itemInList++
+  })
+
+  clearButton.addEventListener('click', function() {
+    listText.innerHTML = ''
+    itemInList = 0
+  })
+
+</script>
+
+</body>
+</html>
