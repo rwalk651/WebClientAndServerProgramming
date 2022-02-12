@@ -66,8 +66,12 @@ let cats_and_owners = [
 ]
 
 // TODO print Gary Oldman's cat's name
-console.log()
+let garysCat = cats_and_owners
+    .filter( owner => owner.name === 'Gary Oldman')
+    .map( owner => owner.cat)
+console.log(garysCat)
 // TODO Taylor Swift's cat is called 'Meredith'. Write code to add this data to the array.
+
 // TODO write a loop to print each cat owner, and their cat's name, one per line. Use the forEach style.
 
 
