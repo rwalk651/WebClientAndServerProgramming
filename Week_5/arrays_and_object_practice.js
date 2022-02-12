@@ -55,6 +55,8 @@ function country(rates, value) {
 console.log(`The exchange rate with the highest value is ${country(rates, maxValue)} with ${maxValue}.`)
 // code applied from: https://bobbyhadz.com/blog/javascript-get-min-max-values-in-object
 // code applied from: https://bobbyhadz.com/blog/javascript-get-object-key-by-value
+
+
 /* c. Use this JavaScript array of objects of cat owners, and their cats. Source, moderncat.com
  */
 
@@ -75,7 +77,9 @@ let newOwner = { name: 'Taylor Swift', cat: 'Meredith' }
 cats_and_owners.push(newOwner)
 console.log(cats_and_owners)
 // TODO write a loop to print each cat owner, and their cat's name, one per line. Use the forEach style.
-
+cats_and_owners.forEach(function(name) {
+    console.log(name);
+})
 
 
 
@@ -215,3 +219,7 @@ let nobel_prize_winners_2017 = {
         }
     ]
 }
+
+let literatureLaureate = nobel_prize_winners_2017.prizes.laureates( prize => prize.category === 'literature')
+console.log(literatureLaureate)
+
