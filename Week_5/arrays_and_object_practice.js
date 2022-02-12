@@ -71,7 +71,9 @@ let garysCat = cats_and_owners
     .map( owner => owner.cat)
 console.log(garysCat)
 // TODO Taylor Swift's cat is called 'Meredith'. Write code to add this data to the array.
-
+let newOwner = { name: 'Taylor Swift', cat: 'Meredith' }
+cats_and_owners.push(newOwner)
+console.log(cats_and_owners)
 // TODO write a loop to print each cat owner, and their cat's name, one per line. Use the forEach style.
 
 
