@@ -66,7 +66,7 @@ let cats_and_owners = [
 ]
 
 // TODO print Gary Oldman's cat's name
-
+console.log()
 // TODO Taylor Swift's cat is called 'Meredith'. Write code to add this data to the array.
 // TODO write a loop to print each cat owner, and their cat's name, one per line. Use the forEach style.
 
