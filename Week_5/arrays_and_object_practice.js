@@ -20,6 +20,7 @@ let iss_location = {
 // TODO Extract the latitude value, and log it to the console.
 let latitude = iss_location.iss_position.latitude
 console.log(latitude)
+
 // TODO Extract the longitude value, and log it to the console.
 let longitude = iss_location.iss_position.longitude
 console.log(longitude)
@@ -42,9 +43,11 @@ let rates = {
 // TODO write code to add a new property for Swiss Francs. Symbol is CHF, value is 1.1787.
 rates.CHF = 1.1787
 console.log(rates)
+
 // TODO if you had 100 Euros, write code to get the exchange rate from the object, then calculate
 //      the equivalent value in Australian Dollars (AUD)
 console.log(rates.AUD * 100)
+
 // TODO write code to identify the currency symbol that has the highest exchange rate compared to Euros.
 //    In other words, identify the property with the largest value. the answer is BRL (Brazilian Real) at 3.8959 BRL to 1 Euro.
 let exchange = Object.values(rates)
@@ -72,23 +75,20 @@ let garysCat = cats_and_owners
     .filter( owner => owner.name === 'Gary Oldman')
     .map( owner => owner.cat)
 console.log(garysCat)
+
 // TODO Taylor Swift's cat is called 'Meredith'. Write code to add this data to the array.
 let newOwner = { name: 'Taylor Swift', cat: 'Meredith' }
 cats_and_owners.push(newOwner)
 console.log(cats_and_owners)
+
 // TODO write a loop to print each cat owner, and their cat's name, one per line. Use the forEach style.
 cats_and_owners.forEach(function(name) {
     console.log(name);
 })
 
-
-
 /* d. Use the following JSON object, describing the Nobel Prize winners in 2017.
 Source http://api.nobelprize.org/v1/prize.json?year=2017
 * */
-
-
-
 
 let nobel_prize_winners_2017 = {
     "prizes":[
@@ -221,13 +221,26 @@ let category = prize[3]
 let literature = category.laureates
 let laureate = literature[0]
 console.log(`The Literature Nobel laureate is ${laureate.firstname} ${laureate.surname}.`)
+
 // TODO print the ids of each of the Physics Nobel laureates.
 //  Your code should still work without modification if a laureate was added, or removed.
-let physics = nobel_prize_winners_2017.prizes
+let physics = nobel_prize_winners_2017.prizes[0].laureates
+console.log(physics)
+for (let i = 0 ; i < physics.length ; i++) {
+
+}
+/*let nobel = nobel_prize_winners_2017.prizes
     .filter( physics => physics.category === 'physics')
-    .map( physics => physics.laureates)
-let id = physics.map( id => id[0] === 'id')
-console.log(id)
+let physics = nobel[0]
+let laureates = physics.laureates
+/*physics.laureates.forEach(function(recipient) {
+    console.log(recipient)
+})
+for (var i = 0 ; i < laureates.startsWith('id') ; i++)
+console.log(laureates)*/
+
+
+
 // TODO write code to print the names of all of the prize categories (So your output would start physics, chemistry, medicine... ).
 // TODO write code to print the total number of prize categories
 // TODO write code to count the total number of laureates from 2017.
