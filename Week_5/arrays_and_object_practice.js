@@ -225,10 +225,21 @@ console.log(`The Literature Nobel laureate is ${laureate.firstname} ${laureate.s
 // TODO print the ids of each of the Physics Nobel laureates.
 //  Your code should still work without modification if a laureate was added, or removed.
 let physics = nobel_prize_winners_2017.prizes[0].laureates
-console.log(physics)
-for (let i = 0 ; i < physics.length ; i++) {
+//console.log(physics)
+//for (let i = 0 ; i < physics.length ; i++) {
+physics.forEach(function(data) {
+    let id = Object.keys(physics.id)
+    let value = Object.values(physics.id)
+    console.log(`${data(id)}: ${value}`)
 
-}
+
+})
+
+
+
+    //console.log(physics[i])
+
+
 /*let nobel = nobel_prize_winners_2017.prizes
     .filter( physics => physics.category === 'physics')
 let physics = nobel[0]
