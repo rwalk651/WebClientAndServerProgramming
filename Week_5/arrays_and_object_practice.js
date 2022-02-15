@@ -223,7 +223,11 @@ let laureate = literature[0]
 console.log(`The Literature Nobel laureate is ${laureate.firstname} ${laureate.surname}.`)
 // TODO print the ids of each of the Physics Nobel laureates.
 //  Your code should still work without modification if a laureate was added, or removed.
-
+let physics = nobel_prize_winners_2017.prizes
+    .filter( physics => physics.category === 'physics')
+    .map( physics => physics.laureates)
+let id = physics.map( id => id[0] === 'id')
+console.log(id)
 // TODO write code to print the names of all of the prize categories (So your output would start physics, chemistry, medicine... ).
 // TODO write code to print the total number of prize categories
 // TODO write code to count the total number of laureates from 2017.
