@@ -216,44 +216,27 @@ let nobel_prize_winners_2017 = {
 }
 
 // TODO print the full name of the Literature Nobel laureate.
-let prize = nobel_prize_winners_2017.prizes
-let category = prize[3]
-let literature = category.laureates
-let laureate = literature[0]
-console.log(`The Literature Nobel laureate is ${laureate.firstname} ${laureate.surname}.`)
+let prize = nobel_prize_winners_2017.prizes[3].laureates[0]
+console.log(`The Literature Nobel laureate is ${prize.firstname} ${prize.surname}.`)
 
 // TODO print the ids of each of the Physics Nobel laureates.
 //  Your code should still work without modification if a laureate was added, or removed.
 let physics = nobel_prize_winners_2017.prizes[0].laureates
-//console.log(physics)
-//for (let i = 0 ; i < physics.length ; i++) {
-physics.forEach(function(data) {
-    let id = Object.keys(physics.id)
-    let value = Object.values(physics.id)
-    console.log(`${data(id)}: ${value}`)
-
-
-})
-
-
-
-    //console.log(physics[i])
-
-
-/*let nobel = nobel_prize_winners_2017.prizes
-    .filter( physics => physics.category === 'physics')
-let physics = nobel[0]
-let laureates = physics.laureates
-/*physics.laureates.forEach(function(recipient) {
-    console.log(recipient)
-})
-for (var i = 0 ; i < laureates.startsWith('id') ; i++)
-console.log(laureates)*/
-
-
+let id = function() {
+    return physics.map( id => id.firstname + ' ' + id.surname + ': ' + id.id)
+}
+console.log(id().join('\n'))
+// code applied from https://stackoverflow.com/questions/40074566/how-do-i-loop-through-an-array-with-multiple-objects-and-list-certain-elements-i
 
 // TODO write code to print the names of all of the prize categories (So your output would start physics, chemistry, medicine... ).
+let categories = nobel_prize_winners_2017.prizes
+let categoryName = function() {
+    return categories.map( name => name.category)
+}
+console.log(`Categories: ${categoryName()}`)
+
 // TODO write code to print the total number of prize categories
+
 // TODO write code to count the total number of laureates from 2017.
 //   have a good look at how the JSON is structured, and think about what loop(s) you'll need to write.
 
