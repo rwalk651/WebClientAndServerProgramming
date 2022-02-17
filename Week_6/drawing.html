@@ -15,66 +15,66 @@
 </head>
 <body>
 
-<div id="controls">
-    <label for="color-picker">Choose color</label>
-    <input id="color-selector" type="color">
+    <P>Drag the mouse on the canvas</P>
+    <canvas id="canvas" height="400" width="400"></canvas>
 
-    <label for="circle-size"></label>
-    <input id=""
-</div>
+    <div id="controls">
+        <label for="color-selector">Choose color</label>
+        <input id="color-selector" type="color">
 
-<P>Drag the mouse on the canvas</P>
-<canvas id="canvas" height="400" width="400"></canvas>
-
-<script>
-
-    let canvas = document.querySelector('#canvas')
-    let context = canvas.getContext('2d')
-
-    let colorInput = document.querySelector('#color-picker')
-    let sizeInput = document.querySelector('#circle-size')
-
-    // Keep track of whether the mouse button has been pressed down or not.
-    // Think of this as whether the user is drawing or not, is their brush on the canvas?
-    let mousedown = false
-
-    canvas.addEventListener('mousedown', function() {
-        mousedown = true
-    })
-
-    canvas.addEventListener('mouseup', function() {
-        mousedown = false
-    })
-
-    // If mouse leaves the canvas then stop drawing
-    canvas.addEventListener('mouseout', function() {
-        mousedown = false
-    })
-
-    canvas.addEventListener('mousemove', function() {
-
-        // If the mouse button is not pressed down, do not draw.
-        if (!mousedown) { return }
-
-        // event is a built-in variable, contains the event that triggered this function
-        // get the x, y location of the event
-        let x = event.offsetX
-        let y = event.offsetY   //offsetX, offsetY, may not work in older browsers
-
-        //Draw a filled rectangle centered under the mouse click
-        //x, y is the top left corner, so shift up and left by 5 to center it under the mouse.
-        let fillColor = colorInput.value
-        context.fillRect(x-5, y-5, 10, 10)
-        context.fillStyle = fillColor
-        context.beginPath()
-        let size = sizeInput.value
-        context.arc(x-5, y-5, size, 0, 6.3)
-        context.stroke()
+        <label for="circle-size"></label>
+        <input id="circle-size" type="range">
+    </div>
 
 
-    })
+    <script>
 
-</script>
+        let canvas = document.querySelector('#canvas')
+        let context = canvas.getContext('2d')
+
+        let colorInput = document.querySelector('#color-selector')
+        let sizeInput = document.querySelector('#circle-size')
+
+        // Keep track of whether the mouse button has been pressed down or not.
+        // Think of this as whether the user is drawing or not, is their brush on the canvas?
+        let mousedown = false
+
+        canvas.addEventListener('mousedown', function() {
+            mousedown = true
+        })
+
+        canvas.addEventListener('mouseup', function() {
+            mousedown = false
+        })
+
+        // If mouse leaves the canvas then stop drawing
+        canvas.addEventListener('mouseout', function() {
+            mousedown = false
+        })
+
+        canvas.addEventListener('mousemove', function() {
+
+            // If the mouse button is not pressed down, do not draw.
+            if (!mousedown) { return }
+
+            // event is a built-in variable, contains the event that triggered this function
+            // get the x, y location of the event
+            let x = event.offsetX
+            let y = event.offsetY   //offsetX, offsetY, may not work in older browsers
+
+            //Draw a filled rectangle centered under the mouse click
+            //x, y is the top left corner, so shift up and left by 5 to center it under the mouse.
+            let color = colorInput.value
+            let size = sizeInput.value
+
+            context.beginPath()
+            context.strokeStyle = color
+            context.arc(x-5, y-5, size, 0, 6.3)
+            context.stroke()
+
+        })
+
+    </script>
 
 </body>
 </html>
