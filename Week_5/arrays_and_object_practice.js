@@ -26,7 +26,6 @@ let longitude = iss_location.iss_position.longitude
 console.log(longitude)
 
 
-
 /* b. Use this JavaScript object of exchange rates relative to Euros.
 The properties are currency symbols, the values are the exchange rates.
 Data source: http://fixer.io/
