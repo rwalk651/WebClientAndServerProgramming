@@ -236,10 +236,15 @@ let categoryName = function() {
 console.log(`Categories: ${categoryName()}`)
 
 // TODO write code to print the total number of prize categories
+console.log(categoryName().length)
 
 // TODO write code to count the total number of laureates from 2017.
 //   have a good look at how the JSON is structured, and think about what loop(s) you'll need to write.
-
-
-// console.log(nobel_prize_winners_2017)
-
+let total = function() {
+    for ( let i = 0 ; i < categories.length ; i++) {
+        console.log(categories[i])
+        //let data = categories.map( num => num.laureates)
+    }
+}
+//console.log(total().length)
+total()
