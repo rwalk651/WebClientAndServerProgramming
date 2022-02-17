@@ -22,9 +22,11 @@
         <label for="color-selector">Choose color</label>
         <input id="color-selector" type="color">
 
-        <label for="circle-size"></label>
+        <label for="circle-size">Choose size</label>
         <input id="circle-size" type="range">
     </div>
+
+    <button id="clear-canvas">Clear</button>
 
 
     <script>
@@ -34,6 +36,7 @@
 
         let colorInput = document.querySelector('#color-selector')
         let sizeInput = document.querySelector('#circle-size')
+        let clearButton = document.querySelector('#clear-canvas')
 
         // Keep track of whether the mouse button has been pressed down or not.
         // Think of this as whether the user is drawing or not, is their brush on the canvas?
@@ -71,7 +74,11 @@
             context.strokeStyle = color
             context.arc(x-5, y-5, size, 0, 6.3)
             context.stroke()
+        })
 
+        clearButton.addEventListener('click', function() {
+            context.fillStyle = "white"
+            context.fillRect(0, 0, 700, 700)
         })
 
     </script>
