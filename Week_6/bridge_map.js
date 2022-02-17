@@ -1,6 +1,6 @@
 let bridges = [
     {
-        // fill in bridge data as objects nested in array
+        // fill in bridge data as objects nested in array - do the same with map chart
     }
 ]
 
