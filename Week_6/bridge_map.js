@@ -1,4 +1,4 @@
-// Bridge map script with info in objects nested in an array
+// Bridge map script with info as objects nested in an array
 
 let usCenterCoordinates = [39.67, -96.54]
 let zoomLevel = 3.7
@@ -48,9 +48,6 @@ bridges.forEach( bridge => {
         .addTo(map)
 })
 
-
-
-
-
-
-
+export {
+    bridges
+};
