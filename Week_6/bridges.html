@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>Bridges</title>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
@@ -9,24 +11,23 @@
     <link rel="stylesheet" type="text/css" href="bridge_styles.css">
 
     <!-- comment-out bridge_map.js script first, then remove comment
-    tags from worldwide_bridge_map.js
+        tags from worldwide_bridge_map.js
 
     contains test data to validate leaflet and chart.js code    -->
+
     <!-- <script async defer src="worldwide_bridge_map.js"></script>    -->
 
     <script async defer src="bridge_map.js"></script>
 
     <script async defer src="map_chart.js"></script>
 
-
-
 </head>
 <body>
 
 <h1>Longest US Bridges Map</h1>
+<p>Click marker to view popup.</p>
 <div id="bridge-map"></div>
-
-<p>Click the marker to view popup.</p>
+<br>
 
 <canvas id="bridge-chart"></canvas>
 

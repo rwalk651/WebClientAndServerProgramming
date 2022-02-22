@@ -1,4 +1,5 @@
 // test data for validation - activate/deactivate via bridges.html
+// see bridge_map.js for comments
 
 let centerCoordinates = [0, 0]
 let zoomLevel = 1
@@ -8,7 +9,6 @@ let map = L.map('bridge-map').setView(centerCoordinates, zoomLevel)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
-
 
 let bridges = [
     {

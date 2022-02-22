@@ -1,17 +1,17 @@
-// Bridges map with data as objects nested in an array
+// Bridge data as objects nested in an array
 
 
-let usCenterCoordinates = [39.67, -96.54]
-let zoomLevel = 3.7
+let usCenterCoordinates = [39.67, -96.54]   // center coordinates for nice framing
+let zoomLevel = 3.7     // zoom level shows all points of interest
 
 let map = L.map('bridge-map').setView(usCenterCoordinates, zoomLevel)
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {     // attribution tile
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
 
-let bridges = [
+let bridges = [     // main bridge data
     {
         name: 'Verrazano-Narrows Bridge',
         citystate: "New York, NY",
@@ -44,6 +44,8 @@ let bridges = [
     }
 ]
 
+
+// loop places marker and adds popup for each bridge location in 'bridges' array
 bridges.forEach( bridge => {
     let marker = L.marker(bridge.location)
         .bindPopup(`${bridge.name}` + '<br>' + `${bridge.citystate}` + '<br>' + `${bridge.span} meters`)
