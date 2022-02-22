@@ -1,9 +1,9 @@
-// test data for validation
+// test data for validation - activate/deactivate via bridges.html
 
-let usCenterCoordinates = [0, 0]
+let centerCoordinates = [0, 0]
 let zoomLevel = 1
 
-let map = L.map('bridge-map').setView(usCenterCoordinates, zoomLevel)
+let map = L.map('bridge-map').setView(centerCoordinates, zoomLevel)
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

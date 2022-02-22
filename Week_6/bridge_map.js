@@ -1,4 +1,4 @@
-// Bridge maps with data as objects nested in an array
+// Bridges map with data as objects nested in an array
 
 
 let usCenterCoordinates = [39.67, -96.54]
