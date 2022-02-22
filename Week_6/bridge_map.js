@@ -14,7 +14,7 @@ let bridges = [
     {
         name: 'Verrazano-Narrows Bridge',
         citystate: "New York, NY",
-        "span": 1298.4,
+        span: 1298.4,
         location: [40.6066, -74.0447]
     },
     {
