@@ -1,4 +1,4 @@
-// Bridge map script with info as objects nested in an array
+// Bridge maps with data as objects nested in an array
 
 
 let usCenterCoordinates = [39.67, -96.54]
@@ -9,6 +9,7 @@ let map = L.map('bridge-map').setView(usCenterCoordinates, zoomLevel)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
+
 
 let bridges = [
     {

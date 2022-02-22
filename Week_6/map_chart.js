@@ -21,7 +21,7 @@ mapChart = new Chart(ctx, {
     data: {
         labels: bridgeName,
         datasets: [{
-            label: 'Span (meters)',
+            label: 'Span(meters)',
             data: bridgeSpan,
             backgroundColor: [`${getRandomColor()}`, `${getRandomColor()}`,
                 `${getRandomColor()}`, `${getRandomColor()}`, `${getRandomColor()}`]
