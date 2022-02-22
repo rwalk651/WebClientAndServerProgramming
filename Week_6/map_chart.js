@@ -1,5 +1,6 @@
 // Bridge chart script using bridge_map.js dataset. DOES NOT WORK W/O bridge_map.js
-/*
+
+
 let canvas = document.querySelector('#bridge-chart')
 let ctx = canvas.getContext('2d')
 
@@ -18,20 +19,12 @@ let bridgeSpan = bridges.map( bridge => bridge.span)
 mapChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: [`${bridgeName}`],
+        labels: bridgeName,
         datasets: [{
             label: 'Span (meters)',
-            data: [`${bridgeSpan}`],
+            data: bridgeSpan,
             backgroundColor: [`${getRandomColor()}`, `${getRandomColor()}`,
                 `${getRandomColor()}`, `${getRandomColor()}`, `${getRandomColor()}`]
         }]
-    }, options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
-        }
-    }
-})*/
+    },
+})
