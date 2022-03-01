@@ -4,13 +4,8 @@
     <meta charset="UTF-8">
     <title>Where is the ISS</title>
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-          integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-          crossorigin=""/>
-
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-            integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-            crossorigin=""></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
 
     <link rel="stylesheet" type="text/css" href="style.css">
 
@@ -22,8 +17,9 @@
     <h1>Where is the ISS?</h1>
 
     <div>
-      <p>ISS Latitude: <span id="iss_lat"></span></p>
-      <p>ISS Longitude: <span id="iss_long"></span></p>
+        <p id="time"></p>
+        <p>ISS Latitude: <span id="iss_lat"></span></p>
+        <p>ISS Longitude: <span id="iss_long"></span></p>
     </div>
 
     <div id="iss-map"></div>
