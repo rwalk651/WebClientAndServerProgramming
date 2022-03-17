@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+
+        <h1>Hello Vue!</h1>
+
+        <p>{{ message }}</p>
+
+        <button v-on:click="addExclamation">Add !</button>
+
+    </div>
+
+
+    <script>
+        let app = Vue.createApp({
+            data() {
+                return {
+                    message: 'hello',
+                    maxExclamationPoints: 10,
+                    exclamationPoints: 0
+                }
+            },
+            methods: {
+                addExclamation() {
+                    if (this.exclamationPoints < this.maxExclamationPoints) {
+                        this.exclamationPoints++
+                        this.message = this.message + '!'
+                    } else {
+                        alert('Max exclamation points reached')
+                    }
+                }
+            }
+
+        })
+
+
+        app.mount('#app')
+
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>
