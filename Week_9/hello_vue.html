@@ -14,6 +14,8 @@
 
         <button v-on:click="addExclamation">Add !</button>
 
+        <button v-on:click="clear">Clear</button>
+
     </div>
 
 
@@ -34,6 +36,10 @@
                     } else {
                         alert('Max exclamation points reached')
                     }
+                },
+                clear() {
+                    this.message = 'hello'
+
                 }
             }
 
