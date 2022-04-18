@@ -3,7 +3,13 @@
 
     <h1>Would you rather?</h1>
 
-    <would-you-rather></would-you-rather>
+    <would-you-rather v-bind:question="wyrQuestion"
+    v-bind:answer1="wyrAnswer1"
+    v-bind:answer2="wyrAnswer2"
+
+
+    >
+    </would-you-rather>
 
   </div>
 </template>

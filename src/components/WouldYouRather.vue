@@ -3,6 +3,8 @@
 
     <h2>Please make your choice...</h2>
 
+    <h3>{{ question }}</h3>
+
   </div>
 </template>
 
