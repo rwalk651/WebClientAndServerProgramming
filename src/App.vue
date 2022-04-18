@@ -20,7 +20,8 @@ export default {
     return {
       wyrQuestion: 'Would you rather be the author of a popular book or a musician in a band who released a popular album?'
       wyrAnswer1: 'Author',
-      wyrAnswer2: 'Musician'
+      wyrAnswer2: 'Musician',
+      userSelectionMessage: ''
     }
   }
 }

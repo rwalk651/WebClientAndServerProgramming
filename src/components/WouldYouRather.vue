@@ -10,7 +10,9 @@
 export default {
   name: 'WouldYouRather',
   props: {
-    msg: String
+    question: String,
+    answer1: String,
+    answer2: String,
   }
 }
 </script>
