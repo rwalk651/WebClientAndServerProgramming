@@ -1,15 +1,20 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+
+    <h1>Would you rather?</h1>
+
+    <would-you-rather></would-you-rather>
+
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import WouldYouRather from './components/WouldYouRather.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    WouldYouRather
   }
 }
 </script>
