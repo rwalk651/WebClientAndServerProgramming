@@ -1,0 +1,2 @@
+PlayedAll = {}
+PlayedAll.name = "PlayedAll"
